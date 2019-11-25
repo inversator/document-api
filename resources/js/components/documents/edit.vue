@@ -10,27 +10,26 @@
                         <form id="form" @submit.prevent="saveItem($event)">
                             <input v-if="item" name="_method" type="hidden" value="PUT">
                             <div class="form-group">
+                                <label for="title">Document's title</label>
                                 <div v-if="errors.title">
                                     <p class="text-danger" v-for="error in errors.title">{{error}}</p>
                                 </div>
-                                <label for="title">Document's title</label>
                                 <input v-model="document.title" class="form-control" id="title" name="title"/>
                             </div>
 
                             <div class="form-group">
+                                <label for="description">Description</label>
                                 <div v-if="errors.description">
                                     <p class="text-danger" v-for="error in errors.description">{{error}}</p>
                                 </div>
-                                <label for="description">Description</label>
                                 <textarea v-model="document.description" class="form-control" id="description" name="description"></textarea>
                             </div>
 
                             <div class="form-group">
+                                <label for="file">File</label>
                                 <div v-if="errors.file">
                                     <p class="text-danger" v-for="error in errors.file">{{error}}</p>
                                 </div>
-                                <label for="file">File</label>
-
                                 <img v-if="item && item.file_link" :src="item.file_link"/>
                                 <input class="form-control-file" id="file" name="file" type="file"/>
                             </div>

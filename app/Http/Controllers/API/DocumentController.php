@@ -32,7 +32,7 @@ class DocumentController extends Controller
     {
 
         $data = $request->validate([
-            'title' => 'required|unique:documents|max:255|min:3',
+            'title' => 'required|unique:documents|max:255|min:3|alpha_dash',
             'description' => 'required|max:1000|min:3',
             'file' => 'required|file|mimes:jpeg,jpg,png|max:10000|dimensions:max_width=2500,max_height=2500'
         ]);
@@ -83,7 +83,7 @@ class DocumentController extends Controller
         $item = Document::findOrFail($id);
 
         $rules = [
-            'title' => 'max:255|min:3',
+            'title' => 'max:255|min:3|alpha_dash',
             'description' => 'max:1000|min:3',
             'file' => 'file|mimes:jpeg,jpg,png|max:10000|dimensions:max_width=2500,max_height=2500'
         ];

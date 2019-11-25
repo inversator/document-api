@@ -1883,7 +1883,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     item: Object
@@ -34079,6 +34078,10 @@ var render = function() {
                     : _vm._e(),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "title" } }, [
+                      _vm._v("Document's title")
+                    ]),
+                    _vm._v(" "),
                     _vm.errors.title
                       ? _c(
                           "div",
@@ -34090,10 +34093,6 @@ var render = function() {
                           0
                         )
                       : _vm._e(),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "title" } }, [
-                      _vm._v("Document's title")
-                    ]),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -34119,6 +34118,10 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "description" } }, [
+                      _vm._v("Description")
+                    ]),
+                    _vm._v(" "),
                     _vm.errors.description
                       ? _c(
                           "div",
@@ -34130,10 +34133,6 @@ var render = function() {
                           0
                         )
                       : _vm._e(),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "description" } }, [
-                      _vm._v("Description")
-                    ]),
                     _vm._v(" "),
                     _c("textarea", {
                       directives: [
@@ -34163,6 +34162,8 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "file" } }, [_vm._v("File")]),
+                    _vm._v(" "),
                     _vm.errors.file
                       ? _c(
                           "div",
@@ -34174,8 +34175,6 @@ var render = function() {
                           0
                         )
                       : _vm._e(),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "file" } }, [_vm._v("File")]),
                     _vm._v(" "),
                     _vm.item && _vm.item.file_link
                       ? _c("img", { attrs: { src: _vm.item.file_link } })
