@@ -8,6 +8,7 @@
                         <router-link to="/" class="btn btn-success"><- back to list</router-link>
                         <hr>
                         <form id="form" @submit.prevent="saveItem($event)">
+                            <input v-if="item" name="_method" type="hidden" value="PUT">
                             <div class="form-group">
                                 <div v-if="errors.title">
                                     <span class="text-danger" v-for="error in errors.title">{{error}}</span>
@@ -31,7 +32,7 @@
                                 <label for="file">File</label>
 
                                 <img v-if="item && item.file_link" :src="item.file_link"/>
-                                <input v-else class="form-control-file" id="file" name="file" type="file"/>
+                                <input class="form-control-file" id="file" name="file" type="file"/>
                             </div>
 
                             <button type="submit" class="btn btn-primary float-right">{{item ? 'Update' : 'Create'}}</button>
@@ -77,7 +78,7 @@
                     });
                 } else {
                     axios
-                        .put('/api/documents/' + this.item.id, $('form').serialize())
+                        .post('/api/documents/' + this.item.id, formData)
                         .then(response => {
 
                             if (response.data.res)

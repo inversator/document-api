@@ -43,6 +43,7 @@ return [
     'ends_with' => 'The :attribute must end with one of the following: :values',
     'exists' => 'The selected :attribute is invalid.',
     'file' => 'The :attribute must be a file.',
+
     'filled' => 'The :attribute field must have a value.',
     'gt' => [
         'numeric' => 'The :attribute must be greater than :value.',
@@ -133,6 +134,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'file' => [
+            'dimensions' => 'The :attribute dimension cannot be more than 2500*2500 px'
+        ]
     ],
 
     /*

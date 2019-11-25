@@ -34,7 +34,7 @@ class DocumentController extends Controller
         $data = $request->validate([
             'title' => 'required|unique:documents|max:255|min:3',
             'description' => 'required|max:1000|min:3',
-            'file' => 'required|file|mimes:jpeg,jpg,png|max:10000|dimensions:max_width=2000,max_height=2000'
+            'file' => 'required|file|mimes:jpeg,jpg,png|max:10000|dimensions:max_width=2500,max_height=2500'
         ]);
 
         $file = $request->file('file');
@@ -85,14 +85,15 @@ class DocumentController extends Controller
         $rules = [
             'title' => 'max:255|min:3',
             'description' => 'max:1000|min:3',
-            'file' => 'file|mimes:jpeg,jpg,png|max:10000|dimensions:max_width=2000,max_height=2000'
+            'file' => 'file|mimes:jpeg,jpg,png|max:10000|dimensions:max_width=2500,max_height=2500'
         ];
 
-        if($request->get('title') != $item->title)
+        if ($request->get('title') != $item->title)
             $rules['title'] .= '|unique:documents';
 
         $data = $request->validate($rules);
 
+        // If exist new file set it instead of the old
         if ($request->hasFile('file')) {
 
             $file = $request->file('file');
@@ -105,7 +106,7 @@ class DocumentController extends Controller
             if ($res) {
                 $oldFile = $item->file;
 
-                if (Storage::delete('api/img/' . $oldFile->filename))
+                if (Storage::delete($this->stroragePath . $oldFile->filename))
                     $oldFile->delete();
 
                 FileList::create([

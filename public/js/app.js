@@ -1883,6 +1883,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     item: Object
@@ -1919,7 +1920,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       } else {
-        axios.put('/api/documents/' + this.item.id, $('form').serialize()).then(function (response) {
+        axios.post('/api/documents/' + this.item.id, formData).then(function (response) {
           if (response.data.res) _this.$router.push({
             name: 'Documents',
             params: {
@@ -34071,6 +34072,12 @@ var render = function() {
                   }
                 },
                 [
+                  _vm.item
+                    ? _c("input", {
+                        attrs: { name: "_method", type: "hidden", value: "PUT" }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
                     _vm.errors.title
                       ? _c(
@@ -34172,10 +34179,12 @@ var render = function() {
                     _vm._v(" "),
                     _vm.item && _vm.item.file_link
                       ? _c("img", { attrs: { src: _vm.item.file_link } })
-                      : _c("input", {
-                          staticClass: "form-control-file",
-                          attrs: { id: "file", name: "file", type: "file" }
-                        })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control-file",
+                      attrs: { id: "file", name: "file", type: "file" }
+                    })
                   ]),
                   _vm._v(" "),
                   _c(
