@@ -11,7 +11,7 @@
                             <input v-if="item" name="_method" type="hidden" value="PUT">
                             <div class="form-group">
                                 <div v-if="errors.title">
-                                    <span class="text-danger" v-for="error in errors.title">{{error}}</span>
+                                    <p class="text-danger" v-for="error in errors.title">{{error}}</p>
                                 </div>
                                 <label for="title">Document's title</label>
                                 <input v-model="document.title" class="form-control" id="title" name="title"/>
@@ -19,7 +19,7 @@
 
                             <div class="form-group">
                                 <div v-if="errors.description">
-                                    <span class="text-danger" v-for="error in errors.description">{{error}}</span>
+                                    <p class="text-danger" v-for="error in errors.description">{{error}}</p>
                                 </div>
                                 <label for="description">Description</label>
                                 <textarea v-model="document.description" class="form-control" id="description" name="description"></textarea>
@@ -27,7 +27,7 @@
 
                             <div class="form-group">
                                 <div v-if="errors.file">
-                                    <span class="text-danger" v-for="error in errors.file">{{error}}</span>
+                                    <p class="text-danger" v-for="error in errors.file">{{error}}</p>
                                 </div>
                                 <label for="file">File</label>
 

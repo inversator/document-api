@@ -34083,7 +34083,7 @@ var render = function() {
                       ? _c(
                           "div",
                           _vm._l(_vm.errors.title, function(error) {
-                            return _c("span", { staticClass: "text-danger" }, [
+                            return _c("p", { staticClass: "text-danger" }, [
                               _vm._v(_vm._s(error))
                             ])
                           }),
@@ -34123,7 +34123,7 @@ var render = function() {
                       ? _c(
                           "div",
                           _vm._l(_vm.errors.description, function(error) {
-                            return _c("span", { staticClass: "text-danger" }, [
+                            return _c("p", { staticClass: "text-danger" }, [
                               _vm._v(_vm._s(error))
                             ])
                           }),
@@ -34167,7 +34167,7 @@ var render = function() {
                       ? _c(
                           "div",
                           _vm._l(_vm.errors.file, function(error) {
-                            return _c("span", { staticClass: "text-danger" }, [
+                            return _c("p", { staticClass: "text-danger" }, [
                               _vm._v(_vm._s(error))
                             ])
                           }),
